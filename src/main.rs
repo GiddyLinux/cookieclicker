@@ -20,7 +20,7 @@ fn main() {
 				write!(stdout, "cookies").unwrap();			
 				user.click();
 				print!("\r");
-    print!("{}", user.score());
+   				print!("{}", user.score());
 				stdout.flush().unwrap();
 			},	
 			_ => process::exit(0),
