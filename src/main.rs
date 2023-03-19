@@ -1,6 +1,6 @@
 use std::{
 	process,
-	io::{stdout, Write},
+	io::stdout,
 };
 
 
