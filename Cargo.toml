@@ -7,8 +7,5 @@ edition = "2021"
 [package.metadata.docs.rs]
 rustdoc = true
 
-[dependencies]
-termion = "2.0.1"
-
 [package.metadata]
 description = "It is like cookie clicker but you can just hold down the spacebar and win automagically, this isn't me being lazy by the way... IT IS A FEATURE."
