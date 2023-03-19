@@ -1,6 +1,6 @@
 use std::{
 	process,
-	io::stdout,
+	io::{stdout, Write},
 };
 
 
@@ -16,8 +16,7 @@ fn main() {
 		std::io::stdin().read_line(&mut input).unwrap();
 
 		match input.trim() {
-			"" => {
-				write!(stdout, "cookies").unwrap();			
+			"" => {			
 				user.click();
 				print!("\r");
    				print!("{}", user.score());
