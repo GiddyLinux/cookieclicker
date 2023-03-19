@@ -1,2 +1,1 @@
-# cookieclicker
-blablabla
+# yes
