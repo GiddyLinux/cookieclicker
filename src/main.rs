@@ -3,10 +3,7 @@ use std::{
 	io::{stdout, Write},
 };
 
-use termion::{
-	clear, 
-	cursor,
-};
+
 
 mod user;
 
@@ -22,8 +19,8 @@ fn main() {
 			"" => {
 				write!(stdout, "cookies").unwrap();			
 				user.click();
-				write!(stdout, "{}{}", cursor::Up(1), clear::CurrentLine).unwrap();
-				write!(stdout, "\r{}", user.score()).unwrap();
+				print!("\r");
+				write!(stdout, "{}", user.score()).unwrap();
 				stdout.flush().unwrap();
 			},	
 			_ => process::exit(0),
