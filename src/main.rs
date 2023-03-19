@@ -1,25 +1,23 @@
 use std::{
-	process,
-	io::{stdin, stdout, Write},
+	io::{stdin, stdout, Read, Write},
 };
 
 mod user;
 
 fn main() {
 	let mut user = user::User::default();
-	let input = &mut String::new();
 
 	loop {	
-		input.clear();
-		stdin().read_line(input).unwrap();
-
-		match input.trim() {
-			"" => {			
-				user.click();
-   				print!("{}", user.score());
-				stdout().flush().unwrap();
-			},	
-			_ => process::exit(0),
-		}
+		for c in stdin().lock().bytes() {
+			let c = c.unwrap() as char;
+			if c == '\n' {
+				break;
+			}
+		}		
+	
+		user.click();
+   		print!("{}", user.score());
+		stdout().flush().unwrap();
 	}
 }
+

@@ -1,4 +1,3 @@
-/// The user's score is stored in this struct.
 #[derive(Default)]
 pub struct User {
 	score: u32,
@@ -28,5 +27,12 @@ mod test {
 		user.click();
 		let new_score = user.score;
 		assert_eq!(new_score, starting_score + 1);
+	}
+
+	// Check if score returns score at 0 initially.
+	#[test]
+	fn score() {
+		let user = User::default();
+		assert_eq!(user.score, 0)	
 	}
 } 
